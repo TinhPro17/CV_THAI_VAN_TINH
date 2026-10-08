@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>산업용 로봇 | THAI VAN TINH Skill Story</title>
+<style>
+@page { size:A4; margin:15mm 20mm; }
+* { box-sizing:border-box; }
+body{
+  font-family:"Malgun Gothic","Nanum Gothic",Arial,sans-serif;
+  line-height:1.5; color:#333; max-width:800px; margin:0 auto;
+  padding:20px; background:#fff;
+}
+.skill-story{max-width:800px;margin:0 auto}
+.skill-story-header{text-align:center;padding:25px 20px;border-bottom:2px solid #1a365d;margin-bottom:25px}
+.skill-story-tag{display:inline-block;font-size:10px;font-weight:bold;color:#2b6cb0;background:#edf2f7;padding:4px 8px;margin-bottom:8px}
+.skill-story-header h1{margin:3px 0;font-size:26px;color:#1a365d}
+.skill-story-en{text-align:center;color:#718096;font-size:12px;margin:0 0 15px}
+.skill-story-summary{max-width:650px;margin:0 auto;text-align:center;line-height:1.7;font-size:13px}
+.story-title{font-size:15px;color:#1a365d;background:#edf2f7;border-left:4px solid #2b6cb0;padding:7px 10px;margin:25px 0 12px}
+p{font-size:13px;margin:6px 0;text-align:justify}
+table{width:100%;border-collapse:collapse;margin:10px 0;font-size:12px}
+th,td{border:1px solid #cbd5e0;padding:8px 10px;text-align:left;vertical-align:top}
+th{background:#f7fafc;color:#1a365d}
+.flow{display:flex;align-items:center;justify-content:center;gap:5px;flex-wrap:wrap;margin:14px 0}
+.flow span{border:1px solid #cbd5e0;background:#f7fafc;color:#1a365d;font-size:10px;font-weight:bold;padding:7px 9px}
+.flow b{color:#2b6cb0}
+.media-placeholder{border:1px dashed #a0aec0;background:#f7fafc;padding:28px 15px;text-align:center;margin:12px 0;color:#718096;font-size:11px}
+.media-placeholder strong{display:block;color:#2b6cb0;font-size:12px;margin-bottom:5px}
+.project-box{border:1px solid #cbd5e0;padding:13px;background:#fff;margin:10px 0}
+.project-box h3{font-size:13px;color:#1a365d;margin:0 0 7px}
+.project-box p{font-size:12px;line-height:1.65;margin:4px 0}
+.code{font-family:Consolas,monospace;background:#f7fafc;border:1px solid #cbd5e0;padding:10px;font-size:11px;line-height:1.6;white-space:pre-wrap}
+.note{color:#718096;font-size:10px}
+.project-tags{display:flex;flex-wrap:wrap;gap:6px;margin:10px 0}
+.project-tags span{font-size:10px;font-weight:bold;color:#1a365d;background:#edf2f7;border:1px solid #cbd5e0;padding:4px 7px}
+.limit-box{padding:12px;background:#f7fafc;border-left:3px solid #718096;margin:10px 0}
+.limit-box p{font-size:12px;margin:3px 0}
+.video-timeline{display:grid;grid-template-columns:1fr;gap:7px;margin-top:10px}
+.video-item{border:1px solid #cbd5e0;padding:9px 11px;background:#fff;font-size:12px}
+.video-item strong{color:#2b6cb0}
+.result-box{margin-top:20px;padding:16px 18px;border:1px solid #cbd5e0;border-top:3px solid #1a365d;background:#f7fafc}
+.result-box h3{color:#1a365d;font-size:15px;margin:0 0 8px;text-align:center}
+.result-box p{font-size:12px;line-height:1.7}
+@media print{
+ body{max-width:none;padding:0}
+ .project-box,.media-placeholder,.result-box,tr{page-break-inside:avoid}
+}
+.video-box {
+  width: 100%;
+  max-width: 760px;
+  aspect-ratio: 16 / 9;
+  margin: 16px auto;
+  border: 1px solid #cbd5e0;
+  background: #000;
+  overflow: hidden;
+}
+
+.video-box iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+  display: block;
+}
+</style>
+</head>
+<body>
+<section class="skill-story">
+
+<header class="skill-story-header">
+  <span class="skill-story-tag">03 · CORE SKILL / PERSONAL PROJECT</span>
+  <h1>산업용 로봇 · CNC Machine Tending</h1>
+  <p class="skill-story-en">RoboDK → ABB RobotStudio / Virtual Controller / RAPID</p>
+  <p class="skill-story-summary">
+    산업용 로봇을 처음부터 학습하기 위해 약 <strong>15일간 집중 실습</strong>을 진행했습니다.
+    RoboDK에서 CNC Machine Tending Cell의 작업 흐름을 구성한 후 ABB RobotStudio로 확장하여
+    TCP, WorkObject, Teaching, RAPID, Digital I/O 및 기본적인 Motion Troubleshooting을 직접 실습했습니다.
+  </p>
+</header>
+
+<h2 class="story-title">01. 프로젝트 목표와 공정 구성</h2>
+<p>
+CNC 가공 공정에서 반복되는 소재 투입과 가공품 배출 작업을 로봇으로 자동화하는 과정을 학습하는 것을 목표로 했습니다.
+단순히 로봇을 움직이는 것보다 Raw Part 확인 → CNC Loading/Unloading → Finished Part 배출까지 하나의 Sequence로 연결하는 데 중점을 두었습니다.
+</p>
+
+<div class="flow">
+  <span>Raw Part</span><b>→</b><span>Camera Check</span><b>→</b><span>Servo Grip</span><b>→</b>
+  <span>CNC Load / Unload</span><b>→</b><span>Vacuum</span><b>→</b><span>Conveyor OUT</span>
+</div>
+
+<div style="margin:12px 0; text-align:center;">
+  <img src="images/01_robotdk_cell.png" alt="RoboDK CNC Machine Tending Cell" style="width:100%; max-width:760px; height:auto; border:1px solid #cbd5e0;">
+  <p style="font-size:11px; color:#718096; text-align:center; margin-top:6px;">
+    <strong style="color:#2b6cb0;">그림 1. RoboDK에서 구성한 CNC Machine Tending Cell</strong><br>
+    ABB Robot, CNC, Raw Part Tray, Conveyor OUT 및 작업 Target을 배치하여 CNC 자동화 공정의 기본 구조와 작업 흐름을 구성했습니다.
+  </p>
+</div>
+
+<h2 class="story-title">02. RoboDK에서 RobotStudio로 발전</h2>
+<table>
+<tr><th style="width:24%">RoboDK</th><td>Cell Layout, Target, Reference Frame, Tool, MoveJ/MoveL, Pick/Place 및 기본 Reachability를 실습했습니다.</td></tr>
+<tr><th>RobotStudio</th><td>ABB Virtual Controller와 Virtual FlexPendant를 사용하여 ToolData/TCP, WorkObject, RAPID, Digital I/O, Sequence 및 Motion Error 대응을 학습했습니다.</td></tr>
+</table>
+<p>
+RoboDK에서 먼저 전체 Cell과 작업 흐름을 이해한 뒤, ABB 로봇의 Controller와 RAPID 프로그램 구조를 더 구체적으로 학습하기 위해 RobotStudio로 프로젝트를 발전시켰습니다.
+</p>
+
+<div style="margin:14px 0 18px; text-align:center; page-break-inside:avoid;">
+  <img src="images/02_smart_gripper_frames.png" alt="RobotStudio Smart Gripper function frames" style="width:72%; max-width:520px; height:auto; border:1px solid #cbd5e0;">
+  <p style="font-size:11px; color:#718096; text-align:center; margin-top:6px; line-height:1.45;">
+    <strong style="color:#2b6cb0;">그림 2. RobotStudio Smart Gripper 기능 프레임 확인</strong><br>
+    Camera, Servo, VacuumOne 프레임을 확인하고 하나의 Gripper에서 작업 목적에 따라 서로 다른 TCP를 사용하는 구조를 학습했습니다.
+  </p>
+</div>
+
+<h2 class="story-title">03. 실제 설비가 없는 환경에서의 구현 방법</h2>
+<p>
+실제 Robot, CNC, PLC 및 Sensor를 보유하지 않았고 사용 가능한 시뮬레이션 기능에도 제한이 있었기 때문에 실제 생산 Cell과 동일한 Digital Twin을 구현하지는 못했습니다.
+대신 Virtual Controller와 Digital I/O를 사용하여 설비의 상태와 신호를 가상으로 구성했습니다.
+</p>
+<table>
+<tr><th>실제 Cell 요소</th><th>프로젝트에서의 대체 방법</th></tr>
+<tr><td>실제 CNC / PLC</td><td>RAPID Sequence + Virtual Controller</td></tr>
+<tr><td>Sensor / 확인 신호</td><td>Virtual Digital Input (WaitDI)</td></tr>
+<tr><td>CNC Door / Chuck</td><td>Digital I/O로 Open/State 신호 구성</td></tr>
+<tr><td>Servo / Vacuum</td><td>Output 명령 + Input 확인 신호로 로직 구성</td></tr>
+<tr><td>Vision 결과</td><td>Camera TCP + diCameraOK 신호로 단순화</td></tr>
+<tr><td>실제 Safety / PLC Interlock</td><td>미구현 — 실제 Commissioning 경험 없음</td></tr>
+</table>
+<div class="limit-box">
+<p><strong>프로젝트 범위:</strong> 실제 생산설비의 완전한 Digital Twin이 아니라 Robot Motion, CNC–Robot Sequence, I/O 및 RAPID 구조를 학습하기 위한 개인 시뮬레이션 프로젝트입니다.</p>
+</div>
+
+<h2 class="story-title">04. Tool / TCP 및 WorkObject 구성</h2>
+<div class="project-box">
+<h3>Smart Gripper — 3개의 작업 TCP</h3>
+<p><strong>tool_Camera</strong> — Raw Part 확인 위치</p>
+<p><strong>tool_Servo</strong> — Raw Part Grip 및 CNC Loading</p>
+<p><strong>tool_Vacuum</strong> — Finished Part Unloading</p>
+</div>
+<div class="project-box">
+<h3>작업 영역별 WorkObject</h3>
+<p><strong>wobj_RawTray</strong> — 소재 공급 영역</p>
+<p><strong>wobj_CNC</strong> — CNC 작업 영역</p>
+<p><strong>wobj_Conveyor</strong> — 완성품 배출 영역</p>
+</div>
+
+<p class="note">※ Tool/TCP와 WorkObject는 Virtual FlexPendant에서 직접 생성·설정했습니다. 이 항목은 화면 수보다 좌표계 개념과 실제 Teaching 과정 이해를 중심으로 정리했습니다.</p>
+
+<h2 class="story-title">05. Virtual Digital I/O 구성</h2>
+<p>실제 PLC와 CNC가 없는 환경에서는 Digital I/O를 이용해 센서와 설비 상태를 단순화하여 구성했습니다. WaitDI로 입력 조건을 확인하고 Set/Reset으로 출력 명령을 구성하면서 Robot–CNC Handshake의 기본 흐름을 연습했습니다.</p>
+<div style="margin:14px 0 18px; text-align:center; page-break-inside:avoid;">
+  <img src="images/03_virtual_io.png" alt="RobotStudio Virtual Digital I/O" style="width:100%; max-width:760px; height:auto; border:1px solid #cbd5e0;">
+  <p style="font-size:11px; color:#718096; text-align:center; margin-top:6px; line-height:1.45;">
+    <strong style="color:#2b6cb0;">그림 3. Virtual Digital Input 상태 확인</strong><br>
+    diRawAreaClear 등 가상 입력 신호를 설정·확인하면서 WaitDI 조건에 따른 Sequence 진행을 테스트했습니다.
+  </p>
+</div>
+
+<h2 class="story-title">06. RAPID 프로그램 구조</h2>
+<p>전체 작업을 기능별 Procedure로 분리하여 공정을 이해하고 오류를 확인하기 쉽도록 구성했습니다.</p>
+<div class="code">main()
+ ├─ PickRawPart()
+ │   └─ Raw Part 확인 → Camera → Servo Pick → Grip 확인
+ ├─ LoadCNC()
+ │   └─ CNC Ready → Door → Finished Part Unload → Raw Part Load → Cycle Start
+ └─ PlaceFinishedPart()
+     └─ Finished Part 확인 → Conveyor Place → Conveyor Run → Next Cycle</div>
+
+<div class="project-tags">
+<span>MoveJ / MoveL</span><span>ToolData / TCP</span><span>WorkObject</span>
+<span>WaitDI</span><span>Set / Reset</span><span>IF / THEN</span>
+<span>PROC</span><span>Digital I/O</span><span>Virtual FlexPendant</span>
+</div>
+
+<div style="margin:14px 0 18px; text-align:center; page-break-inside:avoid;">
+  <img src="images/04_pick_raw_part.png" alt="PickRawPart RAPID" style="width:100%; max-width:760px; height:auto; border:1px solid #cbd5e0;">
+  <p style="font-size:11px; color:#718096; text-align:center; margin-top:6px; line-height:1.45;">
+    <strong style="color:#2b6cb0;">그림 4. PickRawPart() RAPID Sequence</strong><br>Raw Part 영역에서 Camera 확인, Servo Pick, 입력 신호 확인까지의 동작을 별도 Procedure로 구성하고 테스트했습니다.
+  </p>
+</div>
+<div style="margin:14px 0 18px; text-align:center; page-break-inside:avoid;">
+  <img src="images/05_load_cnc.png" alt="LoadCNC RAPID" style="width:100%; max-width:760px; height:auto; border:1px solid #cbd5e0;">
+  <p style="font-size:11px; color:#718096; text-align:center; margin-top:6px; line-height:1.45;">
+    <strong style="color:#2b6cb0;">그림 5. LoadCNC() RAPID Sequence</strong><br>CNC Ready, Door/Chuck 상태, Finished Part Unload와 Raw Part Load 순서를 RAPID와 I/O 조건으로 구성했습니다.
+  </p>
+</div>
+<div style="margin:14px 0 18px; text-align:center; page-break-inside:avoid;">
+  <img src="images/06_place_finished_part.png" alt="PlaceFinishedPart RAPID" style="width:100%; max-width:760px; height:auto; border:1px solid #cbd5e0;">
+  <p style="font-size:11px; color:#718096; text-align:center; margin-top:6px; line-height:1.45;">
+    <strong style="color:#2b6cb0;">그림 6. PlaceFinishedPart() RAPID Sequence</strong><br>Finished Part 보유 여부에 따라 Conveyor OUT 배출 또는 Raw Tray 복귀로 분기하는 로직을 구성했습니다.
+  </p>
+</div>
+
+<h2 class="story-title">07. CNC Loading / Unloading Sequence에서 배운 점</h2>
+<p>
+Finished Part를 Chuck에서 꺼낼 때는 부품 낙하를 방지하기 위해 Vacuum이 부품을 먼저 잡고
+<strong>diVacuumOK</strong> 신호를 확인한 뒤 Chuck을 Open하도록 구성했습니다.
+Raw Part를 투입할 때도 Servo가 소재를 잡은 상태에서 Chuck을 먼저 고정한 후 Servo Grip을 해제하도록 순서를 구성했습니다.
+</p>
+<div class="flow">
+<span>Vacuum Hold</span><b>→</b><span>Vacuum OK</span><b>→</b><span>Chuck Open</span><b>→</b>
+<span>Finished Part Out</span><b>→</b><span>Raw Part Load</span><b>→</b><span>Chuck Clamp</span><b>→</b><span>Servo Release</span>
+</div>
+<p class="note">※ 실제 PLC/CNC Interlock이 아니라 Virtual I/O를 이용한 학습용 Sequence입니다.</p>
+
+<h2 class="story-title">08. Motion Error 및 Troubleshooting</h2>
+<table>
+<tr><th style="width:31%">50050 Position outside reach</th><td>Event Log에서 Joint 작업 범위를 확인하고 Target 위치와 접근 자세를 수정한 뒤 다시 Teaching했습니다.</td></tr>
+<tr><th>50026 Close to singularity</th><td>특정 자세에서 Singularity 경고를 확인하고 Jog 방향과 Target 자세를 변경하면서 회피 방법을 연습했습니다.</td></tr>
+</table>
+<div style="margin:14px 0 18px; text-align:center; page-break-inside:avoid;">
+  <img src="images/07_motion_error.png" alt="RobotStudio motion error" style="width:100%; max-width:760px; height:auto; border:1px solid #cbd5e0;">
+  <p style="font-size:11px; color:#718096; text-align:center; margin-top:6px; line-height:1.45;">
+    <strong style="color:#2b6cb0;">그림 7. Motion Error 확인 및 Target 수정 실습</strong><br>
+    시뮬레이션 중 발생한 Motion Error를 Event Log에서 확인하고 Target 위치·자세를 수정하여 다시 테스트했습니다.
+  </p>
+</div>
+
+<h2 class="story-title">09. 최종 테스트 영상</h2>
+<div style="margin:16px 0; text-align:center; page-break-inside:avoid;">
+  <div class="video-box">
+  <iframe
+    src="https://www.youtube.com/embed/_hi0i5s75Gg"
+    title="Industrial Robot CNC Machine Tending Project"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+    allowfullscreen>
+  </iframe>
+</div>
+
+  <p style="font-size:11px; color:#718096; text-align:center; margin-top:6px;">
+    <strong style="color:#2b6cb0;">
+      최종 CNC Machine Tending 프로젝트 테스트 영상 · 05:05
+    </strong><br>
+    Robot Cell 구성부터 I/O 기반 Sequence 확인 및 연속 자동 사이클 테스트까지의 실습 과정
+  </p>
+</div>
+<div class="video-timeline">
+<div class="video-item"><strong>00:00–00:25 | ① CNC 머신 텐딩 로봇 셀 구성</strong><br>프로젝트 Cell과 전체 공정 구조 확인</div>
+<div class="video-item"><strong>00:26–02:49 | ② I/O 신호 확인 기반 시퀀스 테스트</strong><br>각 입력 조건을 확인하면서 Robot Sequence가 올바르게 진행되는지 단계별 테스트</div>
+<div class="video-item"><strong>02:49–05:05 | ③ 연속 자동 사이클 테스트</strong><br>시뮬레이션 입력 조건을 설정한 후 Raw → CNC → Finished Part → Conveyor → Next Cycle의 연속 동작 확인</div>
+</div>
+
+<h2 class="story-title">10. 15일 학습 결과와 현재 수준</h2>
+<div class="result-box">
+<h3>기초 단계이지만 전체 흐름을 직접 경험했습니다.</h3>
+<p>
+15일간의 집중 실습을 통해 Robot Cell 구성부터 Jog/Teaching, TCP, WorkObject, RAPID,
+Digital I/O, Sequence 구성 및 기본적인 Motion Troubleshooting까지 Virtual Controller 환경에서 직접 실습했습니다.
+아직 실제 산업용 로봇, PLC, CNC를 연결하여 Commissioning한 경험은 없으며 Safety System과 실제 생산라인 Integration에 대한 지식도 부족합니다.
+앞으로 실제 현장에서 선배 엔지니어의 지도를 받으며 Robot–PLC–CNC 신호 연결, Safety 및 실제 설비 Setup 경험을 쌓는 것이 다음 목표입니다.
+</p>
+</div>
+
+</section>
+</body>
+</html>
